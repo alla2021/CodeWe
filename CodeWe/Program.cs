@@ -21,8 +21,13 @@ namespace task
             helper.getMax();
             helper.getMin();
             helper.find(12);
+<<<<<<< HEAD
             */
 
+=======
+            
+            //changes11111111111111
+>>>>>>> 9fb0330 (test)
 
             //Password Generator
             //PasswordGenerator pass = new PasswordGenerator();
