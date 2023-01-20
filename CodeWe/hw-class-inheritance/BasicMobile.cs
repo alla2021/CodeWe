@@ -1,12 +1,26 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using BaseTelephone;
 
-namespace CodeWe.hw_class_inheritance
+namespace BaseMobile
 {
-    internal class Class1
+    public class BasicMobile : Telephone
     {
+        protected string bodyShape;
+
+        public BasicMobile(string Category, string Brand, string Model, double Price, string Standart, string BodyShape) : base(Category, Brand, Model, Price, Standart)
+        {
+            this.bodyShape = BodyShape;
+        }
+
+        public string BodyShape
+        {
+            get { return bodyShape; }
+            set { bodyShape = value; }
+        }
+        public new void PrintInfo()
+        {
+            base.PrintInfo();
+            Console.WriteLine($"bodyShape: {this.bodyShape}\n");
+        }
     }
 }

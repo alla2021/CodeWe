@@ -1,12 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ConsoleApp4;
+using System;
 
-namespace CodeWe.hw_class_inheritance
+
+namespace BaseTelephone
 {
-    internal class Telephone
+    public class Telephone : Item
     {
+        protected string communicationStandard;
+
+        public Telephone(string Category, string Brand, string Model, double Price, string Standart) :
+            base(Category, Brand, Model, Price)
+        {
+            this.communicationStandard = Standart;
+        }
+
+        public string Standart
+        {
+            get { return communicationStandard; }
+            set { communicationStandard = value; }
+        }
+        public new void PrintInfo()
+        {
+            base.PrintInfo();
+            Console.WriteLine($"standart: {this.communicationStandard}");
+        }
     }
 }
