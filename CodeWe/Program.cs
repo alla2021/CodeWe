@@ -15,6 +15,7 @@ namespace task
             //array
             /*
 <<<<<<< HEAD
+<<<<<<< HEAD
              Git Revert
             Git Revert
             Git Revert
@@ -26,6 +27,8 @@ namespace task
             Git Revertadadadaadadad
              */
 
+=======
+>>>>>>> parent of f1bb653 (git-revert-test)
 =======
 >>>>>>> parent of f1bb653 (git-revert-test)
             ArrHelper helper = new ArrHelper();
