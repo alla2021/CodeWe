@@ -14,6 +14,7 @@ namespace task
         {
             //array
             /*
+<<<<<<< HEAD
              Git Revert
             Git Revert
             Git Revert
@@ -25,6 +26,8 @@ namespace task
             Git Revertadadadaadadad
              */
 
+=======
+>>>>>>> parent of f1bb653 (git-revert-test)
             ArrHelper helper = new ArrHelper();
             helper.createList(5, 6, 10, 30);
             helper.printList();
@@ -32,6 +35,18 @@ namespace task
             helper.getMax();
             helper.getMin();
             helper.find(12);
+<<<<<<< HEAD
+<<<<<<< HEAD
+            */
+
+=======
+            
+            //changes11111111111111
+>>>>>>> 9fb0330 (test)
+=======
+            
+            //changes11111111111111
+>>>>>>> 9fb033023ab1e2f4251030895e5028d485e713f4
 
             //Password Generator
             //PasswordGenerator pass = new PasswordGenerator();
