@@ -11,14 +11,21 @@ namespace BaseStudent
     {
         protected string course;
 
-        public Student(string Name, string Course) : base(Category, Brand, Model, Price, Standart)
+        public Student(string Name, string Course) : base(Name)
         {
             this.course = Course;
         }
+
         public string Course
         {
             get => this.course;
             set => this.course = value;
+        }
+
+        public new void PrintInfo()
+        {
+            base.PrintInfo();
+            Console.WriteLine($"You learn: {this.course}");
         }
     }
 }

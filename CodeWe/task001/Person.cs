@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace BasePerson
 {
-    class Person
+    public abstract class Person
     {
         private int id; 
         private Random random;
@@ -27,6 +27,11 @@ namespace BasePerson
         {
             get => this.name;
             set => this.name = value;
+        }
+
+        public void PrintInfo()
+        {
+            Console.WriteLine($"Hello, {this.name}");
         }
     }
 }
