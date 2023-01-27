@@ -43,17 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ArrayGenerator.cs" />
-    <Compile Include="hw-class-inheritance\BasicMobile.cs" />
-    <Compile Include="hw-class-inheritance\Item.cs" />
-    <Compile Include="hw-class-inheritance\Smartphone.cs" />
-    <Compile Include="hw-class-inheritance\Telephone.cs" />
-    <Compile Include="hw-class-inheritance\Tv.cs" />
-    <Compile Include="PasswordGenerator.cs" />
+    <Compile Include="CalculateAge.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="task001\Person.cs" />
-    <Compile Include="task001\Student.cs" />
+    <Compile Include="UserBirthday.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
