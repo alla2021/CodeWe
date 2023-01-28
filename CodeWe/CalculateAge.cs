@@ -8,15 +8,16 @@ namespace CalculateUserAge
 {
     public class CalculateAge 
     {
-        protected int birthYear;
-        protected int birthDay;
-        protected int birthMonth;
+        private int birthYear;
+        private int birthDay;
+        private int birthMonth;
 
         DateTime userBirthDate;
         DateTime now;
 
-        protected bool isAdult;
-        protected int adultYear;
+        private bool isAdult;
+        private int adultYear;
+        
         public CalculateAge(){ }
 
         public int BirthYear
