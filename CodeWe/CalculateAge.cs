@@ -15,6 +15,7 @@ namespace CalculateUserAge
         DateTime userBirthDate;
         DateTime now;
 
+        private int age;
         private bool isAdult;
         private int adultYear;
         
@@ -36,6 +37,11 @@ namespace CalculateUserAge
         {
             get => this.birthMonth;
             set => this.birthMonth = value;
+        }
+
+        public int Age
+        {
+            get => this.Age;
         }
 
         public void inputInfo()
@@ -68,7 +74,7 @@ namespace CalculateUserAge
         public int calculateUserAge()
         {
             now = DateTime.Now;
-            int age = now.Year - userBirthDate.Year;
+            age = now.Year - userBirthDate.Year;
             if (now<userBirthDate) {
                 throw new Exception("ERROR. The birthday cannot be in the future!");
             } else if (now.Month < userBirthDate.Month || (now.Month == userBirthDate.Month && now.Day < userBirthDate.Day)){ 
@@ -97,21 +103,17 @@ namespace CalculateUserAge
 
         private int totalMonth()
         {
-            int total = 0;
-
-    
-                total = ((now.Year - userBirthDate.Year) * 12) + now.Month - userBirthDate.Month;   
-            
-            return total;
+            return ((now.Year - userBirthDate.Year) * 12) + now.Month - userBirthDate.Month;
         }
        
 
         public void printInfo()
-        {  
-            Console.WriteLine($"The person is {calculateUserAge()} years old.");
-            Console.WriteLine(isAdult ? $"The person is ADULT. 18 years was in {adultYear}" : "The person is young.");
-            Console.WriteLine($"You have been alive for {totalDays()} days");
-            Console.WriteLine($"You have been alive for {totalMonth()} months");
+        {
+           Console.WriteLine(age > 0 ? $"The person is --{age}-- years old." : 
+               "This is the child who born in current year.");
+            Console.WriteLine(isAdult ? $"The person is ADULT. 18 years was in --{adultYear}--" : 
+                "The person is young.");
+            Console.WriteLine($"You have been alive for --{totalDays()}-- days OR --{totalMonth()}-- months");
         }
     }
 }
