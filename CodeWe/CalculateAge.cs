@@ -8,12 +8,8 @@ namespace CalculateUserAge
 {
     public class CalculateAge 
     {
-        private int birthYear;
-        private int birthDay;
-        private int birthMonth;
-
         DateTime userBirthDate;
-        DateTime now;
+        //DateTime now;
 
         private int age;
         private bool isAdult;
@@ -23,20 +19,17 @@ namespace CalculateUserAge
 
         public int BirthYear
         {
-            get => this.birthYear;
-            set => this.birthYear = value;
+            get => this.userBirthDate.Year;
         }
 
         public int BirthDay
         {
-            get => this.birthDay;
-            set => this.birthDay = value;
+            get => this.userBirthDate.Day;
         }
 
         public int BirthMonth
         {
-            get => this.birthMonth;
-            set => this.birthMonth = value;
+            get => this.userBirthDate.Month;
         }
 
         public int Age
@@ -44,20 +37,17 @@ namespace CalculateUserAge
             get => this.Age;
         }
 
+        private int enterNumber(string text)
+        {
+            Console.WriteLine($"Enter your --{text}-- of birth: ");
+            return Convert.ToInt32(Console.ReadLine());
+        }
+
         public void inputInfo()
         {
             try
             {
-                Console.WriteLine("Enter your --year-- of birth: ");
-                BirthYear = Convert.ToInt32(Console.ReadLine());
-                
-                Console.WriteLine("Enter your --Day-- of birth: ");
-                BirthDay = Convert.ToInt32(Console.ReadLine());
-
-                Console.WriteLine("Enter your --Month-- of birth: ");
-                BirthMonth = Convert.ToInt32(Console.ReadLine());
-
-                userBirthDate = birthDate();
+                userBirthDate = birthDate(enterNumber("year"), enterNumber("Month"), enterNumber("Day"));
             }
            catch(Exception ex)
             {
@@ -65,21 +55,21 @@ namespace CalculateUserAge
             }
         }
 
-        private DateTime birthDate()
-        {  
-            DateTime theDate = new DateTime(birthYear, birthMonth, birthDay);          
-            return theDate;
+        private DateTime birthDate(int birthYear, int birthMonth, int birthDay)
+        {      
+            return new DateTime(birthYear, birthMonth, birthDay);
         }
 
         public int calculateUserAge()
         {
-            now = DateTime.Now;
+            DateTime now = DateTime.Now;
             age = now.Year - userBirthDate.Year;
             if (now<userBirthDate) {
                 throw new Exception("ERROR. The birthday cannot be in the future!");
             } else if (now.Month < userBirthDate.Month || (now.Month == userBirthDate.Month && now.Day < userBirthDate.Day)){ 
                 age--; 
             }
+
             isAdult = age >= 18 ? true : false;
             if (isAdult)
             {
@@ -90,18 +80,15 @@ namespace CalculateUserAge
 
         private int isAdultCalc()
         {
-            DateTime year = userBirthDate.AddYears(18);
-            return year.Year;
+            return userBirthDate.AddYears(18).Year;
         }
 
         private int totalDays()
         {
-            now = DateTime.Now;
-            TimeSpan ts =  now.Subtract(userBirthDate);
-            return Convert.ToInt32(ts.TotalDays);
+            return Convert.ToInt32(DateTime.Now.Subtract(userBirthDate).TotalDays);
         }
 
-        private int totalMonth()
+        private int totalMonth(DateTime now)
         {
             return ((now.Year - userBirthDate.Year) * 12) + now.Month - userBirthDate.Month;
         }
@@ -113,7 +100,7 @@ namespace CalculateUserAge
                "This is the child who born in current year.");
             Console.WriteLine(isAdult ? $"The person is ADULT. 18 years was in --{adultYear}--" : 
                 "The person is young.");
-            Console.WriteLine($"You have been alive for --{totalDays()}-- days OR --{totalMonth()}-- months");
+            Console.WriteLine($"You have been alive for --{totalDays()}-- days OR --{totalMonth(DateTime.Now)}-- months");
         }
     }
 }
