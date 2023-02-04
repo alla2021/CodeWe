@@ -43,10 +43,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CalculateAge.cs" />
+    <Compile Include="Channel.cs" />
+    <Compile Include="Comment.cs" />
+    <Compile Include="CommentsList.cs" />
+    <Compile Include="PlayList.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserBirthday.cs" />
+    <Compile Include="Video.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
