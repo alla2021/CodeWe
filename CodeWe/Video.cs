@@ -23,13 +23,14 @@ namespace CodeWe_video
         private int dislike = 0;
 
         private int views;
-       
-        
+
+        private int channelId;
+      
         DateTime createdAt;
 
         List<CommentsList> commentsList;
 
-        public Video(string SrcVideo,string Title, string Discription, bool isTag = false, bool playlist = false) 
+        public Video(int channelId, string SrcVideo,string Title, string Discription, bool isTag = false, bool playlist = false) 
         {
             if (isTag) {
                 tagsList=new List<string>();
@@ -45,6 +46,7 @@ namespace CodeWe_video
             this.title = Title;
             this.discription = Discription;
         }
+
         public int Id
         {
             get { return id; }
@@ -65,6 +67,11 @@ namespace CodeWe_video
         {
             get { return this.playlistId; }
             set { this.playlistId = value; }
+        }
+        public int ChannelId
+        {
+            get { return this.channelId; }
+            set { this.channelId = value; }
         }
         public string Discription
         {

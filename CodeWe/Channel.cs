@@ -1,24 +1,46 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CodeWe_Channel
 {
     public class Channel
     {
-        protected string chanalName;
-        protected string chanalID;
-        protected string imgAvatar;
+        private string channelName;
+        private int channelID;
+        private string imgAvatar;
+        private string channelUrl;
+
         protected int subscribersCount;
 
         Random rnd;
-        private int id;
 
-        public Channel() {
+        public Channel(string ChannelName, string ChannelUrl) {
             this.rnd = new Random();
-            this.id = rnd.Next(100000000);
+            this.channelID = ChannelID;
+            this.channelName = ChannelName;
+            this.imgAvatar = ImgAvatar;
+            this.channelUrl = ChannelUrl;
+        }
+
+        public string ChannelName
+        {
+            get { return this.channelName; }
+            set { this.channelName = value; }
+        }
+        public string ImgAvatar
+        {
+            get { return this.imgAvatar; }
+            set { this.imgAvatar = value; }
+        }
+        public string ChannelUrl
+        {
+            get { return this.channelUrl; }
+            set { this.channelUrl = value; }
+        }
+
+        public int ChannelID
+        {
+            get { return this.channelID; }
+            set { this.channelID = rnd.Next(1000000); }
         }
 
         public int addSubscriber()
